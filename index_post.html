@@ -87,7 +87,7 @@
         $("#controls").remove();
         
         // Fetch up to 200 features in one big fetch.
-        api.post("/products/FEEDBACK/ideas", {idea: {name: $("#ideaName").val(), description: $("#ideaDesc").val(), initial_votes: 0}}, function(response) {
+        api.submit("/products/FEEDBACK/ideas", {idea: {name: $("#ideaName").val(), description: $("#ideaDesc").val(), initial_votes: 0}}, function(response) {
           //enter something here
          // $("#feature-template").tmpl(response.features).appendTo("#features");
          console.log(reponse);
