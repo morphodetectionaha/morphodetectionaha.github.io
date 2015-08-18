@@ -87,11 +87,11 @@
         $("#controls").remove();
         
         // Fetch up to 200 features in one big fetch.
-        api.Idea("/products/FEEDBACK/ideas", {idea: {name: $("#ideaName").val(), description: $("#ideaDesc").val(), initial_votes: 0}}, function(response) {
-          //enter something here
-         // $("#feature-template").tmpl(response.features).appendTo("#features");
-         //console.log(reponse);
-        });
+       // api.("/products/FEEDBACK/ideas", {idea: {name: $("#ideaName").val(), description: $("#ideaDesc").val(), initial_votes: 0}}, //function(response) {
+   
+      //  });
+      var request = require('request');
+
       });
       return false;
     });
