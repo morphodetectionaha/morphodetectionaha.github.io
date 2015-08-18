@@ -90,6 +90,7 @@ var theProductKey = ("FEEDBACK");
         api.idea("/products/" + productKey + "/ideas", {idea: {name: ideaName, description: ideaDesc, initial_votes: 0}}, function(response) {
           //enter something here
          // $("#feature-template").tmpl(response.features).appendTo("#features");
+         console.log(reponse);
         });
       });
       return false;
