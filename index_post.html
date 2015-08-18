@@ -87,10 +87,9 @@
         $("#controls").remove();
         
         // Fetch up to 200 features in one big fetch.
-       // api.("/products/FEEDBACK/ideas", {idea: {name: $("#ideaName").val(), description: $("#ideaDesc").val(), initial_votes: 0}}, //function(response) {
+       POST ("/products/FEEDBACK/ideas", {idea: {name: $("#ideaName").val(), description: $("#ideaDesc").val(), initial_votes: 0}});//function(response) {
    
       //  });
-      var request = require('request');
 
       });
       return false;
