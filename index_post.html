@@ -81,13 +81,13 @@
         clientId: "679bf2ba48cbe387a30af0ef9b07acd9a7a31e2cc6a85e73b8fe7c3f154a6d89", // NOTE: replace this with your client ID.
         redirectUri: "https://morphodetectionaha.github.io/index_post.html"
       }).authenticate(function(api, success, message) {
-        var productKey = 'FEEDBACK';
+      
         console.log(success);
         // Hide the controls.
         $("#controls").remove();
         
         // Fetch up to 200 features in one big fetch.
-        api.post("/products/" + productKey + "/ideas", {idea: {name: ideaName, description: ideaDesc, initial_votes: 0}}, function(response) {
+        api.post("/products/FEEDBACK/ideas", {idea: {name: ideaName, description: ideaDesc, initial_votes: 0}}, function(response) {
           //enter something here
          // $("#feature-template").tmpl(response.features).appendTo("#features");
          console.log(reponse);
