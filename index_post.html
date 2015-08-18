@@ -7,7 +7,7 @@
   <script src="//code.jquery.com/jquery-latest.min.js"></script>
   <script src="//ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
   <script type="text/javascript" charset="utf-8" src="https://secure.aha.io/assets/javascript_api/aha-api.latest.js"></script>
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <style>
     .feature {
       border-top: 1px solid #0073cf;
@@ -87,7 +87,7 @@
         $("#controls").remove();
         
         // Fetch up to 200 features in one big fetch.
-       POST ("/products/FEEDBACK/ideas", {idea: {name: $("#ideaName").val(), description: $("#ideaDesc").val(), initial_votes: 0}});//function(response) {
+       $.post("/products/FEEDBACK/ideas", {idea: {name: $("#ideaName").val(), description: $("#ideaDesc").val(), initial_votes: 0}});//function(response) {
    
       //  });
 
