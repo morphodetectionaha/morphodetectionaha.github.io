@@ -87,7 +87,7 @@ var theProductKey = ("FEEDBACK");
         $("#controls").remove();
         
         // Fetch up to 200 features in one big fetch.
-        api.post("/products/" + productKey + "/ideas", {idea: {"name": ideaName, "description": ideaDesc, "initial_votes": 0}}, function(response) {
+        api.post("/products/" + productKey + "/ideas", {"idea": {"name": ideaName, "description": ideaDesc, "initial_votes": 0}}, function(response) {
           //enter something here
         });
       });
