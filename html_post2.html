@@ -15,6 +15,7 @@
     <input type="text" placeholder="Idea Name" id="ideaName"></input>
     <input type="text" placeholder="Idea Description" id="ideaDesc"></input>
     <input type="text" placeholder="domain" id="subdomain"></input>
+      <input type="text" placeholder="Product key" id="product-key"></input>
     <input type="submit" class="btn" value="Load features"></input>
       </form>
 <div id="features"></div>
@@ -29,23 +30,23 @@ $("#controls").submit(function() {
         clientId: "679bf2ba48cbe387a30af0ef9b07acd9a7a31e2cc6a85e73b8fe7c3f154a6d89", // NOTE: replace this with your client ID.
         redirectUri: "https://morphodetectionaha.github.io/html_post2.html"
       }).authenticate(function(api, success, message) {
-      
+       var productKey = $("#product-key").val();
         console.log(success);
 
         //$.get("https://morphodetection.aha.io/oauth/authorize");
 
 
-        api.post("/products/FEEDBACK/ideas",
+        api.post("/products/"+ productKey + "/ideas",
         {
           "idea":{
 
             "name": "test idea",
           "description": "<p>This is the description</p>",
-          "initial_votes":0}
+          "initial_votes":3}
 
         },
         function(response){
-          console.log(response);
+         // console.log(response);
         });
 
 
