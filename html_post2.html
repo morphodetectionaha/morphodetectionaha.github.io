@@ -35,16 +35,19 @@ $("#controls").submit(function() {
         //$.get("https://morphodetection.aha.io/oauth/authorize");
 
 
-        api.$post("/products/FEEDBACK/ideas",
-        {"idea":{
+        api.post("/products/FEEDBACK/ideas",
+        {
+          "idea":{
 
-            "name":ideaName,
-          "description":ideaDesc,
+            "name": "test idea",
+          "description": "<p>This is the description</p>",
           "initial_votes":0}
 
+        },
+        function(response){
+
         }
-       
-        );
+        });
 $("#controls").remove();
 
         // ,
