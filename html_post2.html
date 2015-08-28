@@ -90,6 +90,7 @@
 
 $("#controls").submit(function() {  
         console.log("clicked");
+
       new AhaApi({
         accountDomain: "morphodetection",
         clientId: "679bf2ba48cbe387a30af0ef9b07acd9a7a31e2cc6a85e73b8fe7c3f154a6d89", // NOTE: replace this with your client ID.
@@ -105,7 +106,9 @@ $("#controls").submit(function() {
         console.log(success);
 
         //$.get("https://morphodetection.aha.io/oauth/authorize");
-selectedCategory = $("#CBRNE").val();
+
+
+
 
         api.post("/products/FEEDBACK/ideas",
         {
@@ -119,13 +122,15 @@ selectedCategory = $("#CBRNE").val();
 
         },
         function(response){
-         // console.log(response);
+         // resets fields to null
          $('#myModal').modal();
          $('#idea-Name').val('');
          $('#idea-Desc').val('');
          $('#email-Field').val('');
          
-         
+         //resets select back to original select category
+          var s = document.getElementById("selected-Category");
+        s.selectedIndex = 0;
 
         });
         
