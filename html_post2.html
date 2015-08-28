@@ -5,25 +5,56 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script type="text/javascript" charset="utf-8" src="https://secure.aha.io/assets/javascript_api/aha-api.latest.js"></script>
-
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 </head>
-<body class="container">
-<form id="controls">
-    <input type="text" placeholder="Idea Name" id="idea-Name"></input>
-    <input type="text" placeholder="Idea Description" id="idea-Desc"></input>
-    <input type="text" placeholder="Email" id="email-Field"></input>
+
+
+
+
+
+
+<body class="container" >
+  <div class="col-sm-10">
+<img src="RGB_Morpho Logo.jpg" alt="Morpho" style="width:341px;height:139px;">
+   </div>
+
+
+<form id="controls" class="form-horizontal">
+
+
+  <div class="col-sm-10">
+
+    <input type="text" placeholder="Idea Name" id="idea-Name" class="form-control"></input>
+      </div>
+
+
+
+  <div class="col-sm-10">
+  <label for="idea-Desc"></label>
+    <textarea  type="text" placeholder="Idea Description" id="idea-Desc" rows="3" class="form-control"></textarea>
+          </div>
+  <div class="col-sm-10" >
+  <label for="email-Field"></label>
+    <input type="text" placeholder="Email" id="email-Field" class="form-control"></input>
+              </div>
+
 <!--     <input type="text" placeholder="domain" id="subdomain"></input>
       <input type="text" placeholder="Product key" id="product-key"></input> -->
-<select id="selected-Category">
+        <div class="col-sm-10">
+            <label for="selected-Category"></label>
+<select id="selected-Category" class="form-control">
    <option value="EDS" selected>EDS</option>
    <option value="CBRNE" selected>CBRNE</option>
 </select> 
+      </div>
+      <div class="col-sm-10">
+        <p></p>
 
-
-    <input type="submit" class="btn" value="Submit Idea"></input>
+    <input type="submit" class="btn" value="Submit Idea" id="ideaBttn"></input>
+     </div>
       </form>
 <div id="features"></div>
   <!-- </form><button name ="btn" type="button" value="Load features" onclick="thisfunction()">touch</button> -->
@@ -42,7 +73,7 @@ $("#controls").submit(function() {
          var ideaDesc = $("#idea-Desc").val();
          var emailField = $("#email-Field").val();
          var selectedCategory = $("#selected-Category").val();
-        $("#controls").remove();
+        //$("#controls").remove();
         console.log(success);
 
         //$.get("https://morphodetection.aha.io/oauth/authorize");
@@ -62,6 +93,7 @@ $("#controls").submit(function() {
         function(response){
          // console.log(response);
         });
+        $('#myModal').modal(options)
 
 
     });
@@ -75,5 +107,31 @@ $("#controls").submit(function() {
 
 
 </script>
+
+<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Thank You</h4>
+      </div>
+      <div class="modal-body">
+        Thank you for submitting your idea to Morpho Detection's idea portal!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+   
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </body>
 </html>
