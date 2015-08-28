@@ -12,8 +12,8 @@
 </head>
 <body class="container">
 <form id="controls">
-    <input type="text" placeholder="Idea Name" id="ideaName"></input>
-    <input type="text" placeholder="Idea Description" id="ideaDesc"></input>
+    <input type="text" placeholder="Idea Name" id="idea-Name"></input>
+    <input type="text" placeholder="Idea Description" id="idea-Desc"></input>
 <!--     <input type="text" placeholder="domain" id="subdomain"></input>
       <input type="text" placeholder="Product key" id="product-key"></input> -->
     <input type="submit" class="btn" value="Submit Idea"></input>
@@ -31,6 +31,9 @@ $("#controls").submit(function() {
         redirectUri: "https://morphodetectionaha.github.io/html_post2.html"
       }).authenticate(function(api, success, message) {
        //var productKey = $("#product-key").val();
+         var ideaName = $("#idea-Name").val();
+         var ideaDesc = $("#idea-Desc").val();
+
         $("#controls").remove();
         console.log(success);
 
@@ -41,8 +44,8 @@ $("#controls").submit(function() {
         {
           "idea":{
 
-            "name": $("ideaName"),
-          "description": "<p>"+ $("ideaDesc") +"</p>",
+            "name": ideaName,
+          "description": "<p>"+ ideaDesc +"</p>",
           "initial_votes":3}
 
         },
