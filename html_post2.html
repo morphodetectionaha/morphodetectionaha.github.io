@@ -14,6 +14,7 @@
 <form id="controls">
     <input type="text" placeholder="Idea Name" id="idea-Name"></input>
     <input type="text" placeholder="Idea Description" id="idea-Desc"></input>
+    <input type="text" placeholder="Email" id="email-Field"></input>
 <!--     <input type="text" placeholder="domain" id="subdomain"></input>
       <input type="text" placeholder="Product key" id="product-key"></input> -->
     <input type="submit" class="btn" value="Submit Idea"></input>
@@ -33,7 +34,7 @@ $("#controls").submit(function() {
        //var productKey = $("#product-key").val();
          var ideaName = $("#idea-Name").val();
          var ideaDesc = $("#idea-Desc").val();
-
+         var emailField = $("#email-Field").val();
         $("#controls").remove();
         console.log(success);
 
@@ -46,6 +47,7 @@ $("#controls").submit(function() {
 
             "name": ideaName,
           "description": "<p>"+ ideaDesc +"</p>",
+          "created_by": emailField,
           "initial_votes":3}
 
         },
