@@ -37,7 +37,7 @@ $("#controls").submit(function() {
         //$.get("https://morphodetection.aha.io/oauth/authorize");
 
 
-        api.proto.post("/products/"+ productKey + "/ideas",
+        api.post("/products/"+ productKey + "/ideas",
         {
           "idea":{
 
