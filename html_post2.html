@@ -100,6 +100,7 @@ $("#controls").submit(function() {
          var ideaDesc = $("#idea-Desc").val();
          var emailField = $("#email-Field").val();
          var selectedCategory = $("#selected-Category").val();
+         var startCBRNE = $("#CBRNE").val();
         //$("#controls").remove();
         console.log(success);
 
@@ -114,7 +115,7 @@ $("#controls").submit(function() {
           "description": "<p>"+ ideaDesc +"</p>",
           "created_by": emailField,
           "categories": selectedCategory,
-          "initial_votes":3}
+          "initial_votes":1}
 
         },
         function(response){
@@ -123,6 +124,8 @@ $("#controls").submit(function() {
          $('#idea-Name').val('');
          $('#idea-Desc').val('');
          $('#email-Field').val('');
+         $('#selected-Category"').val(startCBRNE);
+         
 
         });
         
