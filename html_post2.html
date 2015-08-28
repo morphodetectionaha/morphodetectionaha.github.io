@@ -17,7 +17,7 @@
     <input type="text" placeholder="Email" id="email-Field"></input>
 <!--     <input type="text" placeholder="domain" id="subdomain"></input>
       <input type="text" placeholder="Product key" id="product-key"></input> -->
-<select id="selectedCategory">
+<select id="selected-Category">
    <option value="EDS" selected>EDS</option>
    <option value="CBRNE" selected>CBRNE</option>
 </select> 
@@ -41,6 +41,7 @@ $("#controls").submit(function() {
          var ideaName = $("#idea-Name").val();
          var ideaDesc = $("#idea-Desc").val();
          var emailField = $("#email-Field").val();
+         var selectedCategory = $("#selected-Category").val();
         $("#controls").remove();
         console.log(success);
 
@@ -54,7 +55,7 @@ $("#controls").submit(function() {
             "name": ideaName,
           "description": "<p>"+ ideaDesc +"</p>",
           "created_by": emailField,
-          "categories": "CBRNE",
+          "categories": selectedCategory,
           "initial_votes":3}
 
         },
