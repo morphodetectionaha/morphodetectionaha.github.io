@@ -14,9 +14,9 @@
 <form id="controls">
     <input type="text" placeholder="Idea Name" id="ideaName"></input>
     <input type="text" placeholder="Idea Description" id="ideaDesc"></input>
-    <input type="text" placeholder="domain" id="subdomain"></input>
-      <input type="text" placeholder="Product key" id="product-key"></input>
-    <input type="submit" class="btn" value="Load features"></input>
+<!--     <input type="text" placeholder="domain" id="subdomain"></input>
+      <input type="text" placeholder="Product key" id="product-key"></input> -->
+    <input type="submit" class="btn" value="Submit Idea"></input>
       </form>
 <div id="features"></div>
   <!-- </form><button name ="btn" type="button" value="Load features" onclick="thisfunction()">touch</button> -->
@@ -26,23 +26,23 @@
 $("#controls").submit(function() {  
         console.log("clicked");
       new AhaApi({
-        accountDomain: $("#subdomain").val(),
+        accountDomain: "morphodetection",
         clientId: "679bf2ba48cbe387a30af0ef9b07acd9a7a31e2cc6a85e73b8fe7c3f154a6d89", // NOTE: replace this with your client ID.
         redirectUri: "https://morphodetectionaha.github.io/html_post2.html"
       }).authenticate(function(api, success, message) {
-       var productKey = $("#product-key").val();
+       //var productKey = $("#product-key").val();
         $("#controls").remove();
         console.log(success);
 
         //$.get("https://morphodetection.aha.io/oauth/authorize");
 
 
-        api.post("/products/"+ productKey + "/ideas",
+        api.post("/products/FEEDBACK/ideas",
         {
           "idea":{
 
-            "name": "test idea",
-          "description": "<p>This is the description</p>",
+            "name": ideaName,
+          "description": "<p>"+ideaDesc+"</p>",
           "initial_votes":3}
 
         },
