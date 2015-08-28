@@ -105,7 +105,7 @@ $("#controls").submit(function() {
         console.log(success);
 
         //$.get("https://morphodetection.aha.io/oauth/authorize");
-$('#selected-Category"').select($('#CBRNE'));
+selectedCategory = $("#CBRNE").val();
 
         api.post("/products/FEEDBACK/ideas",
         {
