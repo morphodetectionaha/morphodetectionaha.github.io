@@ -17,9 +17,9 @@
     <input type="text" placeholder="Email" id="email-Field"></input>
 <!--     <input type="text" placeholder="domain" id="subdomain"></input>
       <input type="text" placeholder="Product key" id="product-key"></input> -->
-<select>
-   <option value="volvo">EDS</option>
-   <option value="saab">CBRNE</option>
+<select id="selectedCategory">
+   <option value="EDS" selected>EDS</option>
+   <option value="CBRNE" selected>CBRNE</option>
 </select> 
 
 
@@ -54,6 +54,7 @@ $("#controls").submit(function() {
             "name": ideaName,
           "description": "<p>"+ ideaDesc +"</p>",
           "created_by": emailField,
+          "categories": "CBRNE",
           "initial_votes":3}
 
         },
