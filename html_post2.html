@@ -100,12 +100,12 @@ $("#controls").submit(function() {
          var ideaDesc = $("#idea-Desc").val();
          var emailField = $("#email-Field").val();
          var selectedCategory = $("#selected-Category").val();
-         var startCBRNE = $("#CBRNE").val();
+         //var startCBRNE = $("#CBRNE").val();
         //$("#controls").remove();
         console.log(success);
 
         //$.get("https://morphodetection.aha.io/oauth/authorize");
-
+$('#selected-Category"').select($('#CBRNE').val(););
 
         api.post("/products/FEEDBACK/ideas",
         {
@@ -124,7 +124,7 @@ $("#controls").submit(function() {
          $('#idea-Name').val('');
          $('#idea-Desc').val('');
          $('#email-Field').val('');
-         $('#selected-Category"').val(startCBRNE);
+         
          
 
         });
