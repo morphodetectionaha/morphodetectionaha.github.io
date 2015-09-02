@@ -96,7 +96,7 @@
         api.get("/products/", {per_page: 200, fields: 'prefix'}, function(response) {
 
 console.log(response);
-        $("#feature-template").tmpl(response.products).appendTo("#products");
+        $("#feature-template").tmpl(response.products).appendTo("#product");
 
 
         });
