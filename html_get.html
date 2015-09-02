@@ -75,7 +75,7 @@
         accountDomain: "morphodetection",
         clientId: "3ca87a683a34488a9a3d44a792adba72d9ddcc795cda25e5dbc8995b68cf9fec", // NOTE: replace this with your client ID.
         redirectUri: "https://morphodetectionaha.github.io/html_get.html"
-      }).authenticate(function(api, success, message) {
+      }).authenticate.each(function(api, success, message) {
         //var productKey = $("#product-key").val();
         
         // Hide the controls.
