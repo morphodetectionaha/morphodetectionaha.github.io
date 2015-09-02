@@ -75,7 +75,7 @@
         accountDomain: "morphodetection",
         clientId: "3ca87a683a34488a9a3d44a792adba72d9ddcc795cda25e5dbc8995b68cf9fec", // NOTE: replace this with your client ID.
         redirectUri: "https://morphodetectionaha.github.io/html_get.html"
-      }).authenticate.each(function(api, success, message) {
+      }).authenticate(function(api, success, message) {
         //var productKey = $("#product-key").val();
         
         // Hide the controls.
@@ -90,6 +90,27 @@
 
         });
 
+
+
+
+      });
+      return false;
+
+
+
+     new AhaApi({
+        accountDomain: "morphodetection",
+        clientId: "3ca87a683a34488a9a3d44a792adba72d9ddcc795cda25e5dbc8995b68cf9fec", // NOTE: replace this with your client ID.
+        redirectUri: "https://morphodetectionaha.github.io/html_get.html"
+      }).authenticate(function(api, success, message) {
+        //var productKey = $("#product-key").val();
+        
+        // Hide the controls.
+        $("#controls").remove();
+        
+        // Fetch up to 200 features in one big fetch.
+
+
   api.get("/products/IT4DX/features", {per_page: 200, fields: 'reference_num,name,description,requirements'}, function(response) {
 
 
@@ -102,6 +123,8 @@
 
       });
       return false;
+
+
     });
   </script>
 </body>
