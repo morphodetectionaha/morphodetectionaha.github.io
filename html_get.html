@@ -86,8 +86,8 @@
         // Fetch up to 200 features in one big fetch.
         api.get("/products/", {per_page: 200, products: 'id,name'}, function(response) {
 
-
-          $("#feature-template").tmpl(response.features).appendTo("#features");
+console.log(response);
+         // $("#feature-template").tmpl(response.features).appendTo("#features");
 
 
         });
