@@ -63,8 +63,17 @@
           <div class="description">{{html description.body}}</div>
         </div>
       {{/each}}
+
+     
     
     </div>
+
+      {{each product}}
+        <div class="product">
+      
+        </div>
+      {{/each}}
+
   </script>
   
   <div id="features"></div>
@@ -84,10 +93,10 @@
         $("#controls").remove();
         
         // Fetch up to 200 features in one big fetch.
-        api.get("/products/", {"product":{'prefix'}}, function(response) {
+        api.get("/products/", {per_page: 200, fields: 'prefix'}, function(response) {
 
 console.log(response);
-         // $("#feature-template").tmpl(response.features).appendTo("#features");
+        $("#feature-template").tmpl(response.products).appendTo("#products");
 
 
         });
