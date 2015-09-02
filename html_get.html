@@ -84,9 +84,9 @@
         $("#controls").remove();
         
         // Fetch up to 200 features in one big fetch.
-        api.get("/products/", {products: 'reference_prefix'}, function(response) {
+        api.get("/products/", {fields: 'reference_prefix'}, function(response) {
 
-console.log(response.products.reference_prefix);
+console.log(response);
          // $("#feature-template").tmpl(response.features).appendTo("#features");
 
 
