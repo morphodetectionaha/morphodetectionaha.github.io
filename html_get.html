@@ -89,6 +89,8 @@
   </script>
 
     <script id="product-template" type="text/x-jquery-tmpl">
+
+
     <div class="products">
  
       <div class="reference-prefix">${reference_prefix}</div>
@@ -121,6 +123,7 @@
         $("#product-template").tmpl(response.products).appendTo("#products");
 
 
+
 //  var productsArray = [];
 //           productsArray = reference-prefix;
 // console.log(productsArray);
@@ -128,7 +131,9 @@
   //  productsArray.push (document.getElementById("reference-prefix").innerHTML);
 //var arr = jQuery.getArray($("#reference-prefix"));
 
-console.log(response.products.${reference_prefix});
+var arr = $.makeArray( "reference-prefix" );
+
+console.log(arr);
 
 
 
