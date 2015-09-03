@@ -75,6 +75,15 @@
       {{/each}}
 
   </script>
+
+    <script id="product-template" type="text/x-jquery-tmpl">
+    <div class="product">
+      <div class="reference-prefix">${reference_prefix}</div>
+
+    
+    </div>
+
+  </script>
   
   <div id="features"></div>
   
@@ -93,10 +102,10 @@
         $("#controls").remove();
         
         // Fetch up to 200 features in one big fetch.
-        api.get("/products/", {per_page: 200, fields: 'id' }, function(response) {
+        api.get("/products/", {per_page: 200, fields: 'reference_prefix' }, function(response) {
 
 console.log(response);
-        $("#feature-template").tmpl(response).appendTo("#product");
+        $("#product-template").tmpl(response).appendTo("#product");
 
 
         });
