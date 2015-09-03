@@ -68,11 +68,6 @@
     
     </div>
 
-      {{each product}}
-        <div class="product">
-      
-        </div>
-      {{/each}}
 
   </script>
 
@@ -91,7 +86,32 @@
     $("#controls").submit(function() {    
       
 
-    new AhaApi({
+//     new AhaApi({
+//         accountDomain: "morphodetection",
+//         clientId: "3ca87a683a34488a9a3d44a792adba72d9ddcc795cda25e5dbc8995b68cf9fec", // NOTE: replace this with your client ID.
+//         redirectUri: "https://morphodetectionaha.github.io/html_get.html"
+//       }).authenticate(function(api, success, message) {
+//         //var productKey = $("#product-key").val();
+        
+//         // Hide the controls.
+//         $("#controls").remove();
+        
+//         // Fetch up to 200 features in one big fetch.
+//         api.get("/products/", {per_page: 200, fields: 'reference_prefix' }, function(response) {
+
+// console.log(response);
+//         $("#product-template").tmpl(response.products).appendTo("#product");
+
+
+//         });
+
+
+
+
+//       });
+
+
+      new AhaApi({
         accountDomain: "morphodetection",
         clientId: "3ca87a683a34488a9a3d44a792adba72d9ddcc795cda25e5dbc8995b68cf9fec", // NOTE: replace this with your client ID.
         redirectUri: "https://morphodetectionaha.github.io/html_get.html"
@@ -102,10 +122,10 @@
         $("#controls").remove();
         
         // Fetch up to 200 features in one big fetch.
-        api.get("/products/", {per_page: 200, fields: 'reference_prefix' }, function(response) {
+        api.get("/products/MT2/features", {per_page: 200, fields: 'reference_num,name,description,requirements,id,created_by_user,score'}, function(response) {
 
-console.log(response);
-        $("#product-template").tmpl(response.products).appendTo("#product");
+
+          $("#feature-template").tmpl(response.features).appendTo("#features");
 
 
         });
@@ -114,31 +134,6 @@ console.log(response);
 
 
       });
-
-
-  //     new AhaApi({
-  //       accountDomain: "morphodetection",
-  //       clientId: "3ca87a683a34488a9a3d44a792adba72d9ddcc795cda25e5dbc8995b68cf9fec", // NOTE: replace this with your client ID.
-  //       redirectUri: "https://morphodetectionaha.github.io/html_get.html"
-  //     }).authenticate(function(api, success, message) {
-  //       //var productKey = $("#product-key").val();
-        
-  //       // Hide the controls.
-  //       $("#controls").remove();
-        
-  //       // Fetch up to 200 features in one big fetch.
-  //       api.get("/products/MT2/features", {per_page: 200, fields: 'reference_num,name,description,requirements,id,created_by_user,score'}, function(response) {
-
-
-  //         $("#feature-template").tmpl(response.features).appendTo("#features");
-
-
-  //       });
-
-
-
-
-  //     });
  
 
 
