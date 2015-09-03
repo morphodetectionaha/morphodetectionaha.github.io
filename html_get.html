@@ -99,7 +99,7 @@
         // Fetch up to 200 features in one big fetch.
         api.get("/products/", {per_page: 200, fields: 'reference_prefix' }, function(response) {
 
-console.log(response.products);
+console.log(response.products.reference_prefix);
         $("#product-template").tmpl(response.products).appendTo("#products");
 
 
