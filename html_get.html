@@ -95,9 +95,9 @@
   
     
     </div>
- var productsArray = [];
-          productsArray = reference-prefix;
-console.log(productsArray);
+    var elems = document.getElementsByTagName( "reference-prefix" );
+var arr = jQuery.makeArray( reference-prefix);
+console.log(arr);
   </script>
   
   <div id="products"></div>
@@ -122,6 +122,10 @@ console.log(productsArray);
        
         $("#product-template").tmpl(response.products).appendTo("#products");
 
+
+//  var productsArray = [];
+//           productsArray = reference-prefix;
+// console.log(productsArray);
 
         });
 
