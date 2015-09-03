@@ -124,7 +124,7 @@
         // Fetch up to 200 features in one big fetch.
         api.get("/products/MT2/features", {per_page: 200, fields: 'reference_num,name,description,requirements,id,created_by_user,score'}, function(response) {
 
-
+          console.log(response);
           $("#feature-template").tmpl(response.features).appendTo("#features");
 
 
