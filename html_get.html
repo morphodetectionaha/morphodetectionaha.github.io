@@ -41,6 +41,26 @@
     }
     
   </style>
+
+
+ <style>
+    .products {
+      border-top: 1px solid #0073cf;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+       .products .name {
+      float: left;
+      font-weight: bold;
+    }
+    .products .reference-prefix {
+      float: left;
+      padding-right: 10px;
+    }
+ 
+   
+  </style>
+
 </head>
 
 <body class="container">
@@ -73,6 +93,7 @@
 
     <script id="product-template" type="text/x-jquery-tmpl">
     <div class="products">
+    <div class="name">${name}</div> 
       <div class="reference-prefix">${reference_prefix}</div>
 
     
@@ -80,7 +101,7 @@
 
   </script>
   
-  <div id="features"></div>
+  <div id="products"></div>
   
   <script>
     $("#controls").submit(function() {    
@@ -97,9 +118,9 @@
         $("#controls").remove();
         
         // Fetch up to 200 features in one big fetch.
-        api.get("/products/", {per_page: 200, fields: 'reference_prefix' }, function(response) {
+        api.get("/products/", {per_page: 200, fields: 'name,reference_prefix'}, function(response) {
 
-console.log(response.products.products);
+console.log(response.products);
         $("#product-template").tmpl(response.products).appendTo("#products");
 
 
