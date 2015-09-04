@@ -69,22 +69,16 @@
   </form>
   
   <script id="feature-template" type="text/x-jquery-tmpl">
+
+
+
     <div class="feature">
       <div class="reference-num">${reference_num}</div>
       <div class="name">${name}</div> 
       <div class="description">{{html description.body}} </div>
     
       {{each requirements}}
-        <div class="requirement"
-
-<script>
-
-var myF_requirements = [];
-myF_requirements.push("requirement");
-console.log(myF_requirements);
-
-</script>
-        >
+        <div class="requirement">
           <div class="reference-num">${reference_num}</div>
           <div class="description">{{html description.body}}</div>
         </div>
@@ -93,6 +87,12 @@ console.log(myF_requirements);
      
     
     </div>
+
+
+var myF_requirements = [];
+myF_requirements.push("requirement");
+console.log(myF_requirements);
+
 
 
   </script>
