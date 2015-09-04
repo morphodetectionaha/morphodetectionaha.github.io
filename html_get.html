@@ -86,21 +86,21 @@
     </div>
 
 
-  </script>
+  // </script>
 
-    <script id="product-template" type="text/x-jquery-tmpl">
+  //   <script id="product-template" type="text/x-jquery-tmpl">
 
 
-    <div class="products">
+  //   <div class="products">
  
-      <div class="reference-prefix">${reference_prefix}</div>
+  //     <div class="reference-prefix">${reference_prefix}</div>
   
     
-    </div>
+  //   </div>
 
-  </script>
+  // </script>
   
-  <div id="products"></div>
+  <div id="features"></div>
   
   <script>
     $("#controls").submit(function() {    
@@ -120,7 +120,7 @@
         api.get("/products/", {per_page: 200, fields: 'reference_prefix'}, function(response) {
 
        
-        $("#product-template").tmpl(response.products).appendTo("#products");
+       // $("#product-template").tmpl(response.products).appendTo("#products");
 
 
 var myArray = [];
@@ -152,7 +152,7 @@ for (var i = 0; i < myArray.length; i++) {
 
         api.get("/products/" + myArray[i] + "/features", {per_page: 200, fields: 'reference_num,name,description,requirements,id,created_by_user,score'}, function(response) {
 
-          console.log(response.features);
+          //console.log(response.features);
           $("#feature-template").tmpl(response.features).appendTo("#features");
 
 
