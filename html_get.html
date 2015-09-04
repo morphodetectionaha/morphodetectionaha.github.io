@@ -122,16 +122,9 @@
        
         $("#product-template").tmpl(response.products).appendTo("#products");
 
-var arr = [];
-var len = response.products.length;
-for (var i = 0; i < len; i++) {
-    arr.push({
-        key: response.products[i].label,
-        sortable: true,
-        resizeable: true
-    });
 
-            console.log(arr);
+
+            console.log(response.products);
 
 }
 
