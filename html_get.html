@@ -75,7 +75,16 @@
       <div class="description">{{html description.body}} </div>
     
       {{each requirements}}
-        <div class="requirement">
+        <div class="requirement"
+
+<script>
+
+var myF_requirements = [];
+myF_requirements.push("requirement");
+console.log(myF_requirements);
+
+</script>
+        >
           <div class="reference-num">${reference_num}</div>
           <div class="description">{{html description.body}}</div>
         </div>
@@ -141,13 +150,13 @@ console.log(myArray);
         
         // Fetch up to 200 features in one big fetch.
 
-var myF_reference_num = [];
-var myF_name = [];
-var myF_description = [];
-var myF_requirements = [];
-var myF_id = [];
-var myF_created_by_user = [];
-var myF_score = [];
+// var myF_reference_num = [];
+// var myF_name = [];
+// var myF_description = [];
+// var myF_requirements = [];
+// var myF_id = [];
+// var myF_created_by_user = [];
+// var myF_score = [];
 
 for (var i = 0; i < myArray.length; i++) {
 
@@ -157,7 +166,7 @@ for (var i = 0; i < myArray.length; i++) {
           //console.log(response.features);
           $("#feature-template").tmpl(response.features).appendTo("#features");
 
-console.log(response.features);
+//console.log(response.features);
 // for (var i = 0; i < response.features.length; i++) {
 //     myF_name.push(response.features[i].name);
 // }
@@ -173,24 +182,24 @@ console.log(response.features);
 
 }
 
-console.log(myF_name);
-console.log(myF_description);
-console.log(myF_created_by_user);
+// console.log(myF_name);
+// console.log(myF_description);
+// console.log(myF_created_by_user);
 
-var data = [myF_name,myF_description,myF_created_by_user];
-var csvContent = "data:text/csv;charset=utf-8,";
-data.forEach(function(infoArray, index){
+// var data = [myF_name,myF_description,myF_created_by_user];
+// var csvContent = "data:text/csv;charset=utf-8,";
+// data.forEach(function(infoArray, index){
 
-   dataString = infoArray.join(",");
-   csvContent += index < data.length ? dataString+ "\n" : dataString;
+//    dataString = infoArray.join(",");
+//    csvContent += index < data.length ? dataString+ "\n" : dataString;
 
-}); 
-var encodedUri = encodeURI(csvContent);
-var link = document.createElement("a");
-link.setAttribute("href", encodedUri);
-link.setAttribute("download", "my_data.csv");
+// }); 
+// var encodedUri = encodeURI(csvContent);
+// var link = document.createElement("a");
+// link.setAttribute("href", encodedUri);
+// link.setAttribute("download", "my_data.csv");
 
-link.click();
+// link.click();
 
 
 
