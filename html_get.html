@@ -123,9 +123,15 @@
         $("#product-template").tmpl(response.products).appendTo("#products");
 
 
+//var myArray = [];
+//myArray.push
             
-            console.log(response.products[0].reference_prefix);
+           // console.log(response.products[0].reference_prefix);
 
+            myArray
+for (var i = 0; i < response.products.length; i++) {
+    console.log(response.products[i].reference_prefix);
+}
 
 
 
