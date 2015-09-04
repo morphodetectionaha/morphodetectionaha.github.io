@@ -157,15 +157,16 @@ for (var i = 0; i < myArray.length; i++) {
           //console.log(response.features);
           $("#feature-template").tmpl(response.features).appendTo("#features");
 
-for (var i = 0; i < response.features.length; i++) {
-    myF_name.push(response.features[i].name);
-}
-for (var i = 0; i < response.features.length; i++) {
-    myF_description.push(response.features[i].description);
-}
-for (var i = 0; i < response.features.length; i++) {
-    myF_created_by_user.push(response.features[i].myF_created_by_user);
-}
+console.log(response.features);
+// for (var i = 0; i < response.features.length; i++) {
+//     myF_name.push(response.features[i].name);
+// }
+// for (var i = 0; i < response.features.length; i++) {
+//     myF_description.push(response.features[i].description);
+// }
+// for (var i = 0; i < response.features.length; i++) {
+//     myF_created_by_user.push(response.features[i].myF_created_by_user);
+// }
 
 
         });
