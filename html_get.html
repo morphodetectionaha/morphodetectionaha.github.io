@@ -65,7 +65,7 @@
   <form id="controls">
     <input type="text" placeholder="Aha! subdomain" id="subdomain"></input>
     <input type="text" placeholder="Product key" id="product-key"></input>
-    <!-- <input type="submit" class="btn" value="Load features"></input> -->
+    <input type="submit" class="btn" value="Load features"></input>
   </form>
   
   <script id="feature-template" type="text/x-jquery-tmpl">
@@ -115,6 +115,16 @@
 
 
 var myArray = [];
+//var myFArray = [];
+
+var myF_reference_num = [];
+var myF_name = [];
+var myF_description = [];
+var myF_requirements = [];
+var myF_id = [];
+var myF_created_by_user = [];
+var myF_score = [];
+
 
 for (var i = 0; i < response.products.length; i++) {
     myArray.push(response.products[i].reference_prefix);
@@ -146,10 +156,28 @@ for (var i = 0; i < myArray.length; i++) {
           //console.log(response.features);
           $("#feature-template").tmpl(response.features).appendTo("#features");
 
+for (var i = 0; i < response.features.length; i++) {
+    myF_name.push(response.features[i].name);
+}
+for (var i = 0; i < response.features.length; i++) {
+    myF_description.push(response.features[i].description);
+}
 
         });
 
 }
+
+var data = [myF_name, myF_description];
+var csvContent = "data:text/csv;charset=utf-8,";
+data.forEach(function(infoArray, index){
+
+   dataString = infoArray.join(",");
+   csvContent += index < data.length ? dataString+ "\n" : dataString;
+
+}); 
+var encodedUri = encodeURI(csvContent);
+window.open(encodedUri);
+
 
 
       });
