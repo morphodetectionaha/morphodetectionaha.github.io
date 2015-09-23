@@ -69,7 +69,7 @@
   </form>
   
   <script id="feature-template" type="text/x-jquery-tmpl">
-
+<a id="downloadAnchorElem" style="display:none"></a>
 
     <div class="feature">
       <div class="reference-num">${reference_num}</div>
@@ -156,9 +156,11 @@ for (var i = 0; i < myArray.length; i++) {
           $("#feature-template").tmpl(response.features).appendTo("#features");
 
 
-$.toJSON(response);
-
-
+var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(response));
+var dlAnchorElem = document.getElementById('downloadAnchorElem');
+dlAnchorElem.setAttribute("href",     dataStr     );
+dlAnchorElem.setAttribute("download", "scene.json");
+dlAnchorElem.click();
 //console.log(response.features);
 
 // }
