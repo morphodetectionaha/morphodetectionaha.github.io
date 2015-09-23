@@ -156,10 +156,14 @@ for (var i = 0; i < myArray.length; i++) {
           $("#feature-template").tmpl(response.features).appendTo("#features");
 
 
-var url = 'data:text/json;charset=utf8,' + encodeURIComponent(response);
-window.open(url, '_blank');
-window.focus();
+var json = JSON.stringify(response);
+var blob = new Blob([json], {type: "application/json"});
+var url  = URL.createObjectURL(blob);
 
+var a = document.createElement('a');
+a.download    = "backup.json";
+a.href        = url;
+a.textContent = "Download backup.json";
 
 
 //console.log(response.features);
