@@ -156,17 +156,19 @@ for (var i = 0; i < myArray.length; i++) {
           $("#feature-template").tmpl(response.features).appendTo("#features");
 
 
-var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(response));
-var dlAnchorElem = document.getElementById('downloadAnchorElem');
-dlAnchorElem.setAttribute("href",     dataStr     );
-dlAnchorElem.setAttribute("download", i +".json");
-dlAnchorElem.click();
+
 //console.log(response.features);
 
 // }
 
 
         });
+
+        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(response));
+var dlAnchorElem = document.getElementById('downloadAnchorElem');
+dlAnchorElem.setAttribute("href",     dataStr     );
+dlAnchorElem.setAttribute("download", myArray[i] +".json");
+dlAnchorElem.click();
 
 }
 
