@@ -159,7 +159,7 @@ console.log(response.features.release_id);
 var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(response));
 var dlAnchorElem = document.getElementById('downloadAnchorElem');
 dlAnchorElem.setAttribute("href",     dataStr     );
-dlAnchorElem.setAttribute("download", response.features.release_id + ".json");
+dlAnchorElem.setAttribute("download", response.features[0].release_id + ".json");
 dlAnchorElem.click();
 //console.log(response.features);
 //arr++;
