@@ -155,7 +155,7 @@ for (var i = 0; i < myArray.length; i++) {
           //console.log(response);
           $("#feature-template").tmpl(response.features).appendTo("#features");
 
-
+console.log(myArray)
 var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(response));
 var dlAnchorElem = document.getElementById('downloadAnchorElem');
 dlAnchorElem.setAttribute("href",     dataStr     );
@@ -169,6 +169,16 @@ dlAnchorElem.click();
         });
 
 }
+
+
+        api.get("publish/notebooks/6158375585798993926"}, function(response) {
+
+// }
+
+
+        });
+
+
 
 
 
