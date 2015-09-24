@@ -159,7 +159,7 @@ for (var i = 0; i < myArray.length; i++) {
 var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(response));
 var dlAnchorElem = document.getElementById('downloadAnchorElem');
 dlAnchorElem.setAttribute("href",     dataStr     );
-dlAnchorElem.setAttribute("download", "scene.json");
+dlAnchorElem.setAttribute("download", myArray[1] + ".json");
 dlAnchorElem.click();
 //console.log(response.features);
 
