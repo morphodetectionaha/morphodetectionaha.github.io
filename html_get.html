@@ -155,12 +155,12 @@ for (var i = 0; i < myArray.length; i++) {
 
           //console.log(response);
           $("#feature-template").tmpl(response.features).appendTo("#features");
-console.log(response.features.reference_num);
+console.log(response.features[0].reference_num);
 //console.log(myArray[i[i]])
 var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(response));
 var dlAnchorElem = document.getElementById('downloadAnchorElem');
 dlAnchorElem.setAttribute("href",     dataStr     );
-dlAnchorElem.setAttribute("download", response.features.reference_num+ ".json");
+dlAnchorElem.setAttribute("download", response.features[0].reference_num+ ".json");
 dlAnchorElem.click();
 //console.log(response.features);
 //arr++;
