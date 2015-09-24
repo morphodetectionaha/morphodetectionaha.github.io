@@ -75,6 +75,7 @@
       <div class="reference-num">${reference_num}</div>
       <div class="name">${name}</div> 
       <div class="description">{{html description.body}} </div>
+    <div class="release_id">{{html description.body}} </div>
     
       {{each requirements}}
         <div class="requirement">
@@ -154,7 +155,7 @@ for (var i = 0; i < myArray.length; i++) {
 
           //console.log(response);
           $("#feature-template").tmpl(response.features).appendTo("#features");
-console.log(response.features.release_id);
+console.log(response.features);
 //console.log(myArray[i[i]])
 var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(response));
 var dlAnchorElem = document.getElementById('downloadAnchorElem');
