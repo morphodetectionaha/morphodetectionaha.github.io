@@ -134,7 +134,7 @@ var myArray = [];
 for (var i = 0; i < response.products.length; i++) {
     myArray.push(response.products[i].reference_prefix);
 }
-console.log(myArray[1]);
+
 
 
 
@@ -146,15 +146,15 @@ console.log(myArray[1]);
         redirectUri: "https://morphodetectionaha.github.io/html_get.html"
       }).authenticate(function(api, success, message) {
 
-
+var arr =0;
 for (var i = 0; i < myArray.length; i++) {
-var arr = i;
+
 
         api.get("/products/" + myArray[i] + "/features", {per_page: 10000000, fields: 'reference_num,name,description,requirements,id,created_by_user,score'}, function(response) {
 
           //console.log(response);
           $("#feature-template").tmpl(response.features).appendTo("#features");
-
+console.log(myArray[arr]);
 //console.log(myArray[i[i]])
 var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(response));
 var dlAnchorElem = document.getElementById('downloadAnchorElem');
@@ -162,7 +162,7 @@ dlAnchorElem.setAttribute("href",     dataStr     );
 dlAnchorElem.setAttribute("download", myArray[arr] + ".json");
 dlAnchorElem.click();
 //console.log(response.features);
-
+arr++;
 // }
 
 
