@@ -73,16 +73,16 @@
 
     <div class="feature">
       <div class="reference-num">${reference_num}</div>
-      <div class="name">${name}</div> 
-      <div class="description">{{html description.body}} </div>
+      // <div class="name">${name}</div> 
+      // <div class="description">{{html description.body}} </div>
    
 
-      {{each requirements}}
-        <div class="requirement">
-          <div class="reference-num">${reference_num}</div>
-          <div class="description">{{html description.body}}</div>
-        </div>
-      {{/each}}
+      // {{each requirements}}
+      //   <div class="requirement">
+      //     <div class="reference-num">${reference_num}</div>
+      //     <div class="description">{{html description.body}}</div>
+      //   </div>
+      // {{/each}}
 
      
     
@@ -148,7 +148,7 @@ for (var i = 0; i < response.products.length; i++) {
       }).authenticate(function(api, success, message) {
 
 //var arr =0;
-for (var i = 0; i < myArray.length; i++) {
+//for (var i = 0; i < myArray.length; i++) {
 
 
         api.get("/products/" + "MT2" + "/features", {fields: 'reference_num,name,description,requirements,id,created_by_user,score,release_id'}, function(response) {
@@ -169,7 +169,7 @@ dlAnchorElem.click();
 
         });
 
-}
+}//
 
 
         // api.get("publish/notebooks/6158375585798993926", function(response) {
