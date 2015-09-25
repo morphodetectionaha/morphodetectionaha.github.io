@@ -142,7 +142,7 @@ for (var i = 0; i < response.products.length; i++) {
 //for (var i = 0; i < myArray.length; i++) {
 
 
-        api.get("/products/" + "MT2" + "/features", {per_page: 200 , pagination: 'current_page: 2'}, function(response) {
+        api.get("/products/" + "MT2" + "/features", {per_page: 200 , current_page: 2}, function(response) {
 
           console.log(response);
           $("#feature-template").tmpl(response.features).appendTo("#features");
