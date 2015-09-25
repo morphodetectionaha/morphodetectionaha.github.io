@@ -142,16 +142,16 @@ for (var i = 0; i < response.products.length; i++) {
 //for (var i = 0; i < myArray.length; i++) {
 
 
-        api.get("/products/" + "MT2" + "/features", {fields: 'reference_num,name,description,requirements,id,created_by_user,score,release_id'}, function(response) {
+        api.get("/products/" + "MT2" + "/features", {}, function(response) {
 
           //console.log(response);
           $("#feature-template").tmpl(response.features).appendTo("#features");
 
-// var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(response.features));
-// var dlAnchorElem = document.getElementById('downloadAnchorElem');
-// dlAnchorElem.setAttribute("href",     dataStr     );
-// dlAnchorElem.setAttribute("download", i + ".json");
-// dlAnchorElem.click();
+var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(response.features));
+var dlAnchorElem = document.getElementById('downloadAnchorElem');
+dlAnchorElem.setAttribute("href",     dataStr     );
+dlAnchorElem.setAttribute("download", i + ".json");
+dlAnchorElem.click();
 
 
         });
