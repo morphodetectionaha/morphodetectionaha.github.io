@@ -99,33 +99,33 @@ $(document).ready(function(){
     $("#controls").submit(function() {    
       
 
-    new AhaApi({
-        accountDomain: "morphodetection",
-        clientId: "3ca87a683a34488a9a3d44a792adba72d9ddcc795cda25e5dbc8995b68cf9fec", // NOTE: replace this with your client ID.
-        redirectUri: "https://morphodetectionaha.github.io/html_get.html"
-      }).authenticate(function(api, success, message) {
-        //var productKey = $("#product-key").val();
+//     new AhaApi({
+//         accountDomain: "morphodetection",
+//         clientId: "3ca87a683a34488a9a3d44a792adba72d9ddcc795cda25e5dbc8995b68cf9fec", // NOTE: replace this with your client ID.
+//         redirectUri: "https://morphodetectionaha.github.io/html_get.html"
+//       }).authenticate(function(api, success, message) {
+//         //var productKey = $("#product-key").val();
         
-        // Hide the controls.
-        $("#controls").remove();
+//         // Hide the controls.
+//         $("#controls").remove();
         
-        // Fetch up to 200 features in one big fetch.
-        api.get("/products/", {per_page: 200, fields: 'reference_prefix'}, function(response) {
+//         // Fetch up to 200 features in one big fetch.
+//         api.get("/products/", {per_page: 200, fields: 'reference_prefix'}, function(response) {
 
        
 
-//gets ids for all products in aha
+// //gets ids for all products in aha
 
 
-var myArray = [];
-//var myFArray = [];
+// var myArray = [];
+// //var myFArray = [];
 
 
 
 
-for (var i = 0; i < response.products.length; i++) {
-    myArray.push(response.products[i].reference_prefix);
-}
+// for (var i = 0; i < response.products.length; i++) {
+//     myArray.push(response.products[i].reference_prefix);
+// }
 
 
 
@@ -177,12 +177,12 @@ dlAnchorElem.click();
 
 
 
-        });
+        // });
 
 
 
 
-      });
+      // });
 
 
 
